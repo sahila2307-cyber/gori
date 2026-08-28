@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little World 💕</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #fff0f5, #ffe1ec, #f9d5ff);
+  color: #5b2945;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 25px 18px;
+  text-align: center;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  font-size: 75px;
+  animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+  font-size: clamp(42px, 10vw, 75px);
+  margin: 15px 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  opacity: .8;
+}
+
+button {
+  margin-top: 30px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #d85b91;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px #c55a8855;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background: #ffffffaa;
+  backdrop-filter: blur(10px);
+  padding: 30px 22px;
+  border-radius: 25px;
+  margin: 25px 0;
+  box-shadow: 0 10px 30px #9b527522;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.message {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.memories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.memory {
+  height: 150px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f7b2ce, #dcb6f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+}
+
+footer {
+  padding: 40px 10px;
+  opacity: .7;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 22px;
+  animation: floatUp 6s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="heart">💗</div>
+
+    <h1>Our Little World</h1>
+
+    <p class="subtitle">
+      A tiny website for two special people ✨
+    </p>
+
+    <button onclick="showMessage()">
+      Open My Message 💌
+    </button>
+
+    <p id="secret" style="margin-top:25px;font-size:20px;"></p>
+  </section>
+
+
+  <section class="card">
+    <h2>💕 For You</h2>
+
+    <p class="message">
+      Some people come into our lives and make ordinary moments
+      feel a little more special.
+
+      <br><br>
+
+      This little corner of the internet is a collection of
+      memories, smiles, silly moments, and everything that makes
+      our story special.
+
+      <br><br>
+
+      Here's to more conversations, more laughs, and more
+      beautiful memories together. 🌷
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>📸 Our Memories</h2>
+
+    <p class="message">
+      Replace these boxes with your favorite pictures!
+    </p>
+
+    <div class="memories">
+      <div class="memory">📷</div>
+      <div class="memory">🌸</div>
+      <div class="memory">💗</div>
+      <div class="memory">✨</div>
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>🌙 Little Reminder</h2>
+
+    <p class="message">
+      No matter how busy life gets, never forget the little
+      moments that made you smile.
+      <br><br>
+      Keep making memories. 💕
+    </p>
+  </section>
+
+
+  <footer>
+    Made with 💗 for two people
+  </footer>
+
+</div>
+
+
+<script>
+
+function showMessage() {
+  document.getElementById("secret").innerHTML =
+    "You are one of my favorite parts of this little story. 💕";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+
+  heart.className = "floating-heart";
+
+  const hearts = ["💗","💕","💖","💞","🌸","✨"];
+
+  heart.innerHTML =
+    hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration =
+    (4 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 8000);
+}
+
+setInterval(createHeart, 900);
+
+</script>
+
+</body>
+</html>
