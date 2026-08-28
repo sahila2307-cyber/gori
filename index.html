@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Little World 💕</title>
+<title>Rahul ♡ Gloria</title>
 
 <style>
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -20,8 +21,8 @@ html {
 
 body {
     font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffe6ef, #fff5f8, #f5e5ff);
     color: #5b2945;
+    background: linear-gradient(135deg, #ffe6ef, #fff8fb, #f5e5ff);
     overflow-x: hidden;
 }
 
@@ -33,43 +34,62 @@ body {
 #lockScreen {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, #ffe6ef, #f5e5ff);
     display: flex;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(circle at top, #fff0f6, #f7e5ff);
     z-index: 99999;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#lockScreen.hide {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .lockBox {
     width: 90%;
     max-width: 400px;
-    padding: 40px 25px;
+    padding: 45px 25px;
     text-align: center;
-    background: rgba(255,255,255,0.9);
-    border-radius: 30px;
-    box-shadow: 0 15px 50px rgba(100,40,70,0.2);
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(15px);
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(100,40,70,.2);
+    animation: lockAppear 1.2s ease;
+}
+
+@keyframes lockAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .lockHeart {
-    font-size: 65px;
+    font-size: 70px;
     animation: heartbeat 1.5s infinite;
 }
 
 .lockBox h2 {
     font-size: 30px;
-    margin: 15px 0;
+    margin: 15px 0 10px;
 }
 
 .lockBox p {
-    margin: 10px 0;
+    opacity: .75;
 }
 
 .lockBox input {
     width: 100%;
-    padding: 14px;
-    margin-top: 18px;
-    border: 1px solid #e2b4c8;
+    margin-top: 22px;
+    padding: 15px;
     border-radius: 25px;
+    border: 1px solid #e4b4c8;
     outline: none;
     text-align: center;
     font-size: 16px;
@@ -77,16 +97,22 @@ body {
 
 .lockBox button {
     margin-top: 15px;
-    padding: 13px 30px;
+    padding: 14px 30px;
     border: none;
     border-radius: 25px;
     background: #d85b91;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    transition: .3s;
+}
+
+.lockBox button:hover {
+    transform: scale(1.07);
 }
 
 #wrongPassword {
+    margin-top: 12px;
     color: #c44;
     min-height: 20px;
 }
@@ -96,44 +122,62 @@ body {
    FLOATING HEARTS
 ========================= */
 
-.heart {
+.floating-heart {
     position: fixed;
-    bottom: -30px;
-    font-size: 22px;
-    animation: floatUp 8s linear infinite;
-    opacity: 0.7;
+    bottom: -40px;
+    font-size: 20px;
     pointer-events: none;
     z-index: 0;
+    animation: floatHeart linear forwards;
 }
 
-@keyframes floatUp {
+@keyframes floatHeart {
 
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
 
-    20% {
-        opacity: 0.8;
+    15% {
+        opacity: .8;
     }
 
     100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
+
 }
 
 
 /* =========================
-   GENERAL
+   FALLING PETALS
 ========================= */
 
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
+.petal {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    z-index: 0;
+    animation: fallPetal linear forwards;
+}
+
+@keyframes fallPetal {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+
 }
 
 
@@ -147,22 +191,25 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 25px;
 }
 
-.hero-card {
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(12px);
-    padding: 50px 25px;
-    border-radius: 30px;
-    box-shadow: 0 15px 50px rgba(120,50,90,0.15);
-    animation: appear 1.2s ease;
+.heroCard {
+    width: 100%;
+    max-width: 850px;
+    padding: 55px 25px;
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(15px);
+    border-radius: 35px;
+    box-shadow: 0 20px 60px rgba(100,40,70,.14);
+    animation: heroAppear 1.5s ease;
 }
 
-@keyframes appear {
+@keyframes heroAppear {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
 
     to {
@@ -172,41 +219,64 @@ body {
 
 }
 
-.heart-big {
-    font-size: 70px;
+.bigHeart {
+    font-size: 75px;
     animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
 
-    0%, 100% {
+    0%,100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.15);
+        transform: scale(1.18);
     }
 
 }
 
-.hero h1 {
-    font-size: clamp(42px, 10vw, 75px);
-    margin: 15px 0;
+.hero small {
+    font-size: 18px;
+    opacity: .7;
 }
 
-.subtitle {
-    font-size: 20px;
-    opacity: 0.8;
+.hero h1 {
+    font-size: clamp(45px, 11vw, 85px);
+    margin: 15px 0;
 }
 
 .names {
     font-size: 30px;
-    margin-top: 20px;
+    margin: 15px 0 10px;
 }
 
-.scroll {
-    margin-top: 35px;
-    opacity: 0.6;
+.names span {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heroText {
+    font-size: 19px;
+    opacity: .75;
+}
+
+.scrollHint {
+    margin-top: 45px;
+    opacity: .55;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
 }
 
 
@@ -215,43 +285,66 @@ body {
 ========================= */
 
 section {
-    padding: 80px 0;
+    padding: 90px 0;
 }
 
-.section-title {
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.title {
     text-align: center;
-    font-size: 38px;
-    margin-bottom: 35px;
+    font-size: 40px;
+    margin-bottom: 40px;
 }
 
 
 /* =========================
-   PHOTO GALLERY
+   SCROLL ANIMATION
 ========================= */
 
-.photos {
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 18px;
 }
 
 .photo {
-    height: 300px;
-    border-radius: 22px;
+    height: 310px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(100,40,70,0.15);
-    background: #f8dce8;
+    background: linear-gradient(135deg,#ffdce8,#f3ddff);
+    box-shadow: 0 15px 35px rgba(100,40,70,.13);
+    transition: transform .4s, box-shadow .4s;
+}
+
+.photo:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(100,40,70,.2);
 }
 
 .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.photo:hover img {
-    transform: scale(1.08);
 }
 
 
@@ -260,45 +353,47 @@ section {
 ========================= */
 
 .letter {
-    background: rgba(255,255,255,0.8);
-    padding: 35px;
-    border-radius: 25px;
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 28px;
     line-height: 1.9;
     font-size: 18px;
-    box-shadow: 0 10px 35px rgba(100,40,70,0.12);
+    box-shadow: 0 15px 40px rgba(100,40,70,.12);
 }
 
 .letter p {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-size: 20px;
 }
 
 
 /* =========================
-   TOGETHER COUNTER
+   SINCE FEBRUARY
 ========================= */
 
-.counter {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.counter-box {
-    background: rgba(255,255,255,0.8);
-    padding: 25px 10px;
-    border-radius: 20px;
+.since {
     text-align: center;
 }
 
-.number {
-    display: block;
-    font-size: 35px;
-    font-weight: bold;
+.sinceCard {
+    padding: 45px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.78);
+    box-shadow: 0 15px 40px rgba(100,40,70,.12);
 }
 
-.label {
-    font-size: 14px;
-    opacity: 0.7;
+.sinceHeart {
+    font-size: 55px;
+    animation: heartbeat 1.6s infinite;
+}
+
+.sinceText {
+    font-size: 30px;
+    margin-top: 15px;
 }
 
 
@@ -308,19 +403,20 @@ section {
 
 .reasons {
     display: grid;
-    gap: 15px;
+    gap: 18px;
 }
 
 .reason {
-    background: rgba(255,255,255,0.75);
-    padding: 22px;
-    border-radius: 18px;
+    padding: 23px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.75);
+    box-shadow: 0 8px 25px rgba(100,40,70,.08);
     font-size: 18px;
-    transition: transform 0.3s;
+    transition: transform .3s;
 }
 
 .reason:hover {
-    transform: translateY(-5px);
+    transform: translateX(8px);
 }
 
 
@@ -330,22 +426,28 @@ section {
 
 .final {
     text-align: center;
-    padding-bottom: 100px;
+    padding: 100px 20px;
 }
 
-.final-heart {
-    font-size: 60px;
+.finalHeart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
 }
 
 .final h2 {
-    font-size: 35px;
-    margin: 15px 0;
+    font-size: clamp(32px,8vw,55px);
+    margin: 20px 0;
+}
+
+.final p {
+    font-size: 19px;
+    opacity: .75;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    opacity: 0.6;
+    padding: 30px;
+    opacity: .6;
 }
 
 
@@ -353,9 +455,9 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
-    .photos {
+    .gallery {
         grid-template-columns: 1fr;
     }
 
@@ -363,46 +465,51 @@ footer {
         height: 350px;
     }
 
-    .counter {
-        grid-template-columns: 1fr;
+    .letter {
+        padding: 28px 22px;
+        font-size: 16px;
     }
 
-    .letter {
-        padding: 25px;
-        font-size: 16px;
+    .names {
+        font-size: 26px;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     PASSWORD SCREEN
-========================= -->
+<!-- PASSWORD -->
 
 <div id="lockScreen">
 
     <div class="lockBox">
 
-        <div class="lockHeart">💗</div>
+        <div class="lockHeart">
+            💗
+        </div>
 
-        <h2>Our Little Secret</h2>
+        <h2>
+            Our Little Secret
+        </h2>
 
-        <p>Enter the password to enter 💕</p>
+        <p>
+            Only we know the way in 💕
+        </p>
 
         <input
             type="password"
             id="passwordInput"
-            placeholder="Password"
+            placeholder="Enter password"
         >
 
         <button onclick="unlock()">
-            Enter 💌
+            Enter Our World 💌
         </button>
 
         <p id="wrongPassword"></p>
@@ -412,47 +519,34 @@ footer {
 </div>
 
 
-<!-- FLOATING HEARTS -->
-
-<div class="heart" style="left:10%; animation-delay:0s;">💕</div>
-<div class="heart" style="left:30%; animation-delay:2s;">💗</div>
-<div class="heart" style="left:50%; animation-delay:4s;">💖</div>
-<div class="heart" style="left:70%; animation-delay:1s;">💕</div>
-<div class="heart" style="left:90%; animation-delay:3s;">💞</div>
-
-
 <!-- HERO -->
 
 <div class="hero">
 
-    <div class="container">
+    <div class="heroCard">
 
-        <div class="hero-card">
+        <div class="bigHeart">
+            💗
+        </div>
 
-            <div class="heart-big">
-                💗
-            </div>
+        <small>
+            Welcome to
+        </small>
 
-            <p class="subtitle">
-                Welcome to
-            </p>
+        <h1>
+            Our Little World
+        </h1>
 
-            <h1>
-                Our Little World
-            </h1>
+        <div class="names">
+            Rahul <span>♡</span> Gloria
+        </div>
 
-            <div class="names">
-                Your Name ♡ Their Name
-            </div>
+        <p class="heroText">
+            Two hearts, one beautiful story.
+        </p>
 
-            <p class="subtitle">
-                Two hearts, one beautiful story.
-            </p>
-
-            <div class="scroll">
-                ↓ Keep scrolling ↓
-            </div>
-
+        <div class="scrollHint">
+            ↓ Scroll down ↓
         </div>
 
     </div>
@@ -464,41 +558,41 @@ footer {
 
 <section>
 
-    <div class="container">
+<div class="container reveal">
 
-        <h2 class="section-title">
-            Our Memories 📸
-        </h2>
+<h2 class="title">
+    Our Memories 📸
+</h2>
 
-        <div class="photos">
+<div class="gallery">
 
-            <div class="photo">
-                <img
-                    src="https://placehold.co/800x1000/ffdce8/5b2945?text=Our+Photo+1"
-                    alt="Our memory">
-            </div>
-
-            <div class="photo">
-                <img
-                    src="https://placehold.co/800x1000/f3ddff/5b2945?text=Our+Photo+2"
-                    alt="Our memory">
-            </div>
-
-            <div class="photo">
-                <img
-                    src="https://placehold.co/800x1000/ffe8d6/5b2945?text=Our+Photo+3"
-                    alt="Our memory">
-            </div>
-
-            <div class="photo">
-                <img
-                    src="https://placehold.co/800x1000/e0f4ff/5b2945?text=Our+Photo+4"
-                    alt="Our memory">
-            </div>
-
-        </div>
-
+    <div class="photo">
+        <img
+        src="https://placehold.co/800x1000/ffdce8/5b2945?text=Our+Photo+1"
+        alt="Our memory">
     </div>
+
+    <div class="photo">
+        <img
+        src="https://placehold.co/800x1000/f3ddff/5b2945?text=Our+Photo+2"
+        alt="Our memory">
+    </div>
+
+    <div class="photo">
+        <img
+        src="https://placehold.co/800x1000/ffe8d6/5b2945?text=Our+Photo+3"
+        alt="Our memory">
+    </div>
+
+    <div class="photo">
+        <img
+        src="https://placehold.co/800x1000/e0f4ff/5b2945?text=Our+Photo+4"
+        alt="Our memory">
+    </div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -507,114 +601,87 @@ footer {
 
 <section>
 
-    <div class="container">
+<div class="container reveal">
 
-        <h2 class="section-title">
-            A Little Letter 💌
-        </h2>
+<h2 class="title">
+    A Little Letter 💌
+</h2>
 
-        <div class="letter">
+<div class="letter">
 
-            <p>
-                My favorite person,
-            </p>
+<p>
+Dear Gloria,
+</p>
 
-            <p>
-                Somehow, out of all the people in this world,
-                our paths crossed. And honestly, I'm so glad
-                they did.
-            </p>
+<p>
+I'm sorry for annoying you sometimes 😭.
+I know I can be a little annoying,
+but I promise I like you way more
+than I annoy you.
+</p>
 
-            <p>
-                You have become such a special part of my life.
-                The little conversations, the silly moments,
-                the laughs and even the random arguments
-                have all become memories I want to keep.
-            </p>
+<p>
+Ever since I met you,
+I've found myself falling for you
+a little more every day.
+Somehow, you became someone
+really special to me,
+and I love all the little moments
+we share.
+</p>
 
-            <p>
-                I don't know what the future looks like,
-                but I know that every moment we share
-                makes my world a little brighter.
-            </p>
+<p>
+I don't always know how to say it properly,
+but I'm really glad I met you. ❤️
+</p>
 
-            <p>
-                Here's to us, our stupid jokes,
-                our memories, and all the beautiful moments
-                still waiting for us. ❤️
-            </p>
+<p>
+Here's to all our little moments,
+our silly conversations,
+our memories,
+and all the beautiful moments
+still waiting for us.
+</p>
 
-            <p>
-                Always yours,<br>
-                <strong>♡ Your Name</strong>
-            </p>
+<p class="signature">
+Always yours,<br>
+<strong>♡ Rahul</strong>
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- TOGETHER -->
+<!-- SINCE -->
 
 <section>
 
-    <div class="container">
+<div class="container reveal">
 
-        <h2 class="section-title">
-            We've Been Together For ⏳
-        </h2>
+<h2 class="title">
+    Our Story 💕
+</h2>
 
-        <div class="counter">
+<div class="sinceCard">
 
-            <div class="counter-box">
+<div class="sinceHeart">
+    💖
+</div>
 
-                <span
-                    class="number"
-                    id="days">
-                    0
-                </span>
+<div class="sinceText">
+    Since February 2026 ♡
+</div>
 
-                <span class="label">
-                    Days
-                </span>
+<p style="margin-top:15px; opacity:.7;">
+And hopefully many more memories to come.
+</p>
 
-            </div>
+</div>
 
-
-            <div class="counter-box">
-
-                <span
-                    class="number"
-                    id="hours">
-                    0
-                </span>
-
-                <span class="label">
-                    Hours
-                </span>
-
-            </div>
-
-
-            <div class="counter-box">
-
-                <span
-                    class="number"
-                    id="minutes">
-                    0
-                </span>
-
-                <span class="label">
-                    Minutes
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -623,37 +690,37 @@ footer {
 
 <section>
 
-    <div class="container">
+<div class="container reveal">
 
-        <h2 class="section-title">
-            Reasons I Love You 💕
-        </h2>
+<h2 class="title">
+    Reasons I Love You 💕
+</h2>
 
-        <div class="reasons">
+<div class="reasons">
 
-            <div class="reason">
-                ♡ You make ordinary moments feel special.
-            </div>
+<div class="reason">
+    ♡ You make ordinary moments feel special.
+</div>
 
-            <div class="reason">
-                ♡ You always manage to make me smile.
-            </div>
+<div class="reason">
+    ♡ You always manage to make me smile.
+</div>
 
-            <div class="reason">
-                ♡ I love the way we can be completely silly together.
-            </div>
+<div class="reason">
+    ♡ I love the way we can be completely silly together.
+</div>
 
-            <div class="reason">
-                ♡ Every memory with you means something to me.
-            </div>
+<div class="reason">
+    ♡ Every memory with you means something to me.
+</div>
 
-            <div class="reason">
-                ♡ You're simply someone I never want to forget.
-            </div>
+<div class="reason">
+    ♡ You're someone who became really special to me.
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -662,44 +729,48 @@ footer {
 
 <section class="final">
 
-    <div class="container">
+<div class="container reveal">
 
-        <div class="final-heart">
-            💖
-        </div>
+<div class="finalHeart">
+    💖
+</div>
 
-        <h2>
-            Our Story Isn't Over Yet
-        </h2>
+<h2>
+    Our Story Isn't Over Yet
+</h2>
 
-        <p>
-            This is only the beginning of our little story.
-        </p>
+<p>
+This is only the beginning of our little story.
+</p>
 
-        <br>
+<br>
 
-        <p>
-            Made with lots of love ♡
-        </p>
+<p>
+Rahul ♡ Gloria
+</p>
 
-    </div>
+<br>
+
+<p>
+Made with lots of love 💕
+</p>
+
+</div>
 
 </section>
 
 
 <footer>
-    © Our Little World 💕
+    © Rahul ♡ Gloria
 </footer>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
 
-/* PASSWORD */
+/* =========================
+   PASSWORD
+========================= */
 
 function unlock() {
 
@@ -708,12 +779,14 @@ function unlock() {
 
     if (password === "GloriaRahul") {
 
-        document.getElementById("lockScreen")
-            .style.display = "none";
+        document
+            .getElementById("lockScreen")
+            .classList.add("hide");
 
     } else {
 
-        document.getElementById("wrongPassword")
+        document
+            .getElementById("wrongPassword")
             .textContent =
             "Wrong password 💔 Try again.";
 
@@ -722,7 +795,7 @@ function unlock() {
 }
 
 
-/* ALLOW ENTER KEY */
+/* ENTER KEY */
 
 document
     .getElementById("passwordInput")
@@ -735,62 +808,126 @@ document
     });
 
 
-/* TOGETHER COUNTER */
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
 
 
-/* CHANGE THIS DATE */
+reveals.forEach(function(element) {
 
-const startDate =
-    new Date("2025-01-01T00:00:00");
+    observer.observe(element);
 
-
-function updateCounter() {
-
-    const now = new Date();
-
-    let difference =
-        now - startDate;
-
-    if (difference < 0) {
-        difference = 0;
-    }
-
-    const totalMinutes =
-        Math.floor(difference / 60000);
-
-    const days =
-        Math.floor(totalMinutes / 1440);
-
-    const hours =
-        Math.floor(
-            (totalMinutes % 1440) / 60
-        );
-
-    const minutes =
-        totalMinutes % 60;
+});
 
 
-    document.getElementById("days")
-        .textContent = days;
+/* =========================
+   FLOATING HEART GENERATOR
+========================= */
 
-    document.getElementById("hours")
-        .textContent = hours;
+function createHeart() {
 
-    document.getElementById("minutes")
-        .textContent = minutes;
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    const hearts =
+        ["💗","💕","💖","💞","💓","❤️"];
+
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 10000);
 
 }
 
+setInterval(createHeart, 900);
 
-updateCounter();
 
-setInterval(
-    updateCounter,
-    60000
-);
+/* =========================
+   PETAL GENERATOR
+========================= */
+
+function createPetal() {
+
+    const petal =
+        document.createElement("div");
+
+    petal.className =
+        "petal";
+
+    petal.textContent =
+        Math.random() > .5 ? "🌸" : "🌷";
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+    petal.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+    petal.style.fontSize =
+        (14 + Math.random() * 12) + "px";
+
+    document.body.appendChild(petal);
+
+    setTimeout(function() {
+
+        petal.remove();
+
+    }, 13000);
+
+}
+
+setInterval(createPetal, 1800);
 
 </script>
 
 
 </body>
+
 </html>
