@@ -7,6 +7,55 @@
 <title>Our Little World 💕</title>
 
 <style>
+    #lockScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffe6ef, #f7e6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lockBox {
+    width: 90%;
+    max-width: 400px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 28px;
+    box-shadow: 0 15px 50px rgba(100,40,70,0.2);
+}
+
+.lockHeart {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.lockBox input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: 1px solid #e5b5ca;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.lockBox button {
+    margin-top: 15px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 25px;
+    background: #d85b91;
+    color: white;
+    font-size: 16px;
+}
+
+#wrongPassword {
+    color: #c44;
+    margin-top: 12px;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,6 +67,23 @@ html {
 }
 
 body {
+<div id="lockScreen">
+    <div class="lockBox">
+        <div class="lockHeart">💗</div>
+        <h2>Our Little Secret</h2>
+        <p>Enter the password to enter 💕</p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Password"
+        >
+
+        <button onclick="unlock()">Enter 💌</button>
+
+        <p id="wrongPassword"></p>
+    </div>
+</div>
     font-family: Georgia, serif;
     background: linear-gradient(135deg, #ffe6ef, #fff5f8, #f7e6ff);
     color: #5b2945;
@@ -256,6 +322,18 @@ footer {
 </style>
 </head>
 
+<script>
+function unlock() {
+    const password = document.getElementById("passwordInput").value;
+
+    if (password === "GloriaRahul") {
+        document.getElementById("lockScreen").style.display = "none";
+    } else {
+        document.getElementById("wrongPassword").textContent =
+            "Wrong password 💔 Try again.";
+    }
+}
+</script>
 <body>
 
 <!-- Floating hearts -->
