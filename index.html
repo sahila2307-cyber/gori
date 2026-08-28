@@ -1,15 +1,16 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Little World 💕</title>
+
+<title>Rahul ♡ Gloria</title>
 
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -18,57 +19,59 @@ html {
 
 body {
     font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffe4ef, #ffd1e3, #fff0f6);
-    color: #702044;
-    min-height: 100vh;
+    color: #682342;
+    background: linear-gradient(135deg, #ffe5ef, #fff8fb, #f3e3ff);
     overflow-x: hidden;
 }
 
-/* =========================
-   PASSWORD SCREEN
-========================= */
+/* ================= PASSWORD ================= */
 
 #lockScreen {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 99999;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background:
-        radial-gradient(circle at 20% 20%, #ff9fc5 0%, transparent 25%),
-        radial-gradient(circle at 80% 70%, #ff7faf 0%, transparent 25%),
-        linear-gradient(135deg, #30152d, #8b315e, #ff91ba);
+    justify-content: center;
     padding: 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff9fc5, transparent 28%),
+        radial-gradient(circle at 80% 80%, #d98cff, transparent 28%),
+        linear-gradient(135deg, #3b1635, #8e315e, #ed78a8);
 }
 
 .lockBox {
-    width: min(90%, 380px);
-    padding: 38px 28px;
+    width: 100%;
+    max-width: 390px;
+    padding: 42px 28px;
     text-align: center;
-    border-radius: 28px;
-    background: rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,.17);
     backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.4);
-    box-shadow: 0 20px 60px rgba(70,0,40,0.35);
-    animation: boxAppear 1s ease;
+
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 30px;
+
+    box-shadow: 0 25px 70px rgba(50,0,35,.4);
+
+    animation: appear 1s ease;
 }
 
-.lockIcon {
-    font-size: 60px;
-    animation: heartbeat 1.8s infinite;
-    margin-bottom: 15px;
+.lockHeart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
 }
 
 .lockBox h1 {
     color: white;
-    font-size: 34px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin: 15px 0 8px;
 }
 
 .lockBox p {
     color: #ffe8f2;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 #passwordInput {
@@ -76,153 +79,166 @@ body {
     padding: 15px;
     border: none;
     outline: none;
-    border-radius: 15px;
+    border-radius: 18px;
     text-align: center;
     font-size: 16px;
-    background: rgba(255,255,255,0.9);
 }
 
 #enterBtn {
     width: 100%;
-    margin-top: 14px;
     padding: 15px;
+    margin-top: 14px;
+
     border: none;
-    border-radius: 15px;
-    background: #ff3f82;
+    border-radius: 18px;
+
+    background: #ff4385;
     color: white;
-    font-size: 17px;
+
+    font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 #enterBtn:hover {
-    transform: scale(1.03);
-    background: #ff216d;
+    transform: scale(1.04);
 }
 
 #error {
+    display: none;
     color: #ffd5e4;
     margin-top: 14px;
-    display: none;
 }
 
-/* =========================
-   MAIN WEBSITE
-========================= */
+/* ================= WEBSITE ================= */
 
 #website {
     display: none;
 }
 
+/* ================= HERO ================= */
+
 .hero {
-    min-height: 90vh;
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    padding: 40px 20px;
+
+    padding: 30px;
+
     position: relative;
     overflow: hidden;
+
     background:
-        radial-gradient(circle at 50% 20%, rgba(255,255,255,.5), transparent 25%),
-        linear-gradient(135deg, #ffb3d0, #e980ad, #7e315e);
+        radial-gradient(circle at 50% 15%, rgba(255,255,255,.55), transparent 25%),
+        linear-gradient(135deg, #ffb3d0, #dc78a6, #73305a);
 }
 
 .hero small {
     color: white;
-    font-size: 20px;
-    animation: fadeUp 1.2s ease;
+    font-size: 19px;
+    animation: fadeUp 1s ease;
 }
 
 .hero h1 {
     color: white;
-    font-size: clamp(45px, 10vw, 90px);
+
+    font-size: clamp(48px, 11vw, 90px);
+
     font-style: italic;
+
     margin: 15px 0;
-    text-shadow: 0 4px 25px rgba(100,0,50,.35);
-    animation: titleAppear 1.5s ease;
+
+    text-shadow: 0 5px 25px rgba(70,0,40,.4);
+
+    animation: titleIn 1.4s ease;
 }
 
 .names {
-    font-size: clamp(27px, 6vw, 48px);
-    color: #fff;
-    animation: fadeUp 1.8s ease;
+    color: white;
+    font-size: clamp(28px, 7vw, 48px);
+
+    animation: fadeUp 1.7s ease;
 }
 
 .subtitle {
-    color: #fff5fa;
-    font-size: 20px;
+    color: #fff4f9;
+    font-size: 19px;
     margin-top: 15px;
+
+    animation: fadeUp 2s ease;
 }
 
-.scrollDown {
-    margin-top: 40px;
-    font-size: 35px;
+.scroll {
     color: white;
-    animation: bounce 1.5s infinite;
+    font-size: 35px;
+    margin-top: 45px;
+
+    animation: bounce 1.6s infinite;
 }
 
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    pointer-events: none;
-    z-index: 2;
-    animation: floatHeart linear forwards;
-    opacity: .8;
-}
-
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
 
 section {
-    padding: 70px 18px;
+    padding: 75px 15px;
 }
 
 .sectionTitle {
     text-align: center;
-    font-size: clamp(30px, 7vw, 46px);
+
+    font-size: clamp(32px, 8vw, 46px);
+
     font-style: italic;
-    margin-bottom: 35px;
-    color: #8a2856;
+
+    color: #852750;
+
+    margin-bottom: 38px;
 }
 
-/* =========================
-   SLIDESHOW
-========================= */
+/* ================= SLIDESHOW ================= */
 
 .slideshow {
     width: min(94%, 850px);
     margin: auto;
-    position: relative;
 }
 
 .photoFrame {
     position: relative;
-    height: min(70vw, 540px);
+
+    height: min(72vw, 550px);
     min-height: 300px;
+
     overflow: hidden;
-    border-radius: 28px;
-    border: 5px solid rgba(255,255,255,.8);
+
+    border-radius: 30px;
+
+    border: 5px solid rgba(255,255,255,.9);
+
+    background: #f5bfd5;
+
     box-shadow:
-        0 20px 50px rgba(110,20,65,.25),
-        0 0 40px rgba(255,100,160,.25);
-    background: #f7c3d8;
+        0 20px 55px rgba(100,20,65,.25),
+        0 0 35px rgba(255,100,170,.25);
 }
+
+/* PHOTO */
 
 .slide {
     position: absolute;
     inset: 0;
+
     opacity: 0;
-    transform: scale(1.08);
+
+    transform: scale(1.12);
+
     transition:
-        opacity .9s ease,
+        opacity 1s ease,
         transform 5s ease;
 }
 
@@ -234,200 +250,308 @@ section {
 .slide img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
-.photoCaption {
+/* CAPTION */
+
+.caption {
     position: absolute;
-    bottom: 0;
+
     left: 0;
     right: 0;
-    padding: 35px 20px 22px;
+    bottom: 0;
+
+    padding: 50px 20px 23px;
+
     text-align: center;
+
     color: white;
-    font-size: 22px;
-    background: linear-gradient(transparent, rgba(40,0,20,.7));
+
+    font-size: 21px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(45,0,25,.75)
+        );
+
     text-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
-/* buttons */
+/* ARROWS */
 
-.slideBtn {
+.arrow {
     position: absolute;
+
     top: 50%;
+
     transform: translateY(-50%);
+
+    z-index: 5;
+
     width: 52px;
     height: 52px;
+
     border: none;
+
     border-radius: 50%;
-    background: rgba(255,255,255,.9);
-    color: #d52e6b;
-    font-size: 25px;
+
+    background: rgba(255,255,255,.92);
+
+    color: #c72c68;
+
+    font-size: 23px;
+
     cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 5px 20px rgba(80,0,40,.2);
+
+    box-shadow: 0 6px 20px rgba(60,0,30,.2);
+
     transition: .3s;
 }
 
-.slideBtn:hover {
+.arrow:hover {
     transform: translateY(-50%) scale(1.12);
 }
 
 .prev {
-    left: 15px;
+    left: 14px;
 }
 
 .next {
-    right: 15px;
+    right: 14px;
 }
 
-/* dots */
+/* DOTS */
 
 .dots {
     display: flex;
+
     justify-content: center;
+
     gap: 9px;
-    margin-top: 22px;
+
+    margin-top: 20px;
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    background: #e7a3bd;
+
+    border-radius: 20px;
+
+    background: #dfa2bc;
+
     cursor: pointer;
+
     transition: .4s;
 }
 
 .dot.active {
-    width: 27px;
-    border-radius: 10px;
-    background: #ed4c86;
+    width: 28px;
+    background: #e94882;
 }
 
-/* =========================
-   LETTER
-========================= */
+/* ================= LETTER ================= */
 
 .letter {
     max-width: 850px;
+
     margin: auto;
+
     padding: 40px;
-    border-radius: 25px;
-    background: rgba(255,255,255,.55);
-    border: 1px solid rgba(255,255,255,.8);
-    box-shadow: 0 15px 45px rgba(110,20,65,.12);
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,.65);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 45px rgba(100,20,65,.12);
+
     line-height: 1.9;
+
     font-size: 18px;
-    animation: fadeUp 1s ease;
 }
 
-.letter h3 {
+.letter h2 {
     text-align: center;
-    font-size: 30px;
+
     margin-bottom: 25px;
+
+    font-size: 30px;
 }
 
 .signature {
     text-align: right;
-    font-size: 24px;
+
+    margin-top: 25px;
+
+    font-size: 23px;
+
     font-style: italic;
-    margin-top: 20px;
 }
 
-/* =========================
-   SINCE FEBRUARY
-========================= */
+/* ================= STORY ================= */
 
 .storyCard {
     max-width: 700px;
-    margin: 30px auto;
+
+    margin: auto;
+
     text-align: center;
-    padding: 35px 20px;
-    border-radius: 25px;
-    background: rgba(255,255,255,.55);
-    box-shadow: 0 15px 40px rgba(110,20,65,.1);
+
+    padding: 40px 20px;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,.65);
+
+    box-shadow:
+        0 15px 45px rgba(100,20,65,.12);
 }
 
 .storyHeart {
-    font-size: 55px;
+    font-size: 60px;
+
     animation: heartbeat 1.5s infinite;
 }
 
 .storyCard h2 {
     margin: 15px 0;
+
     font-size: 32px;
 }
 
-/* =========================
-   REASONS
-========================= */
+.storyCard p {
+    opacity: .7;
+}
+
+/* ================= REASONS ================= */
 
 .reasons {
-    max-width: 1000px;
+    width: min(95%, 1000px);
+
     margin: auto;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(170px, 1fr));
+
     gap: 18px;
 }
 
 .reason {
     padding: 25px 15px;
+
     text-align: center;
-    border-radius: 20px;
-    background: rgba(255,255,255,.55);
-    border: 1px solid rgba(255,255,255,.8);
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.65);
+
+    box-shadow:
+        0 10px 30px rgba(100,20,65,.09);
+
     transition: .4s;
 }
 
 .reason:hover {
-    transform: translateY(-8px) rotate(1deg);
-    box-shadow: 0 15px 30px rgba(110,20,65,.15);
+    transform:
+        translateY(-8px)
+        rotate(1deg);
 }
 
 .reason span {
-    font-size: 35px;
     display: block;
+
+    font-size: 35px;
+
     margin-bottom: 12px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
-    padding: 70px 20px;
+
+    padding: 90px 20px;
+
     color: white;
-    background: linear-gradient(135deg, #32152d, #8d315e, #e84f88);
+
+    background:
+        linear-gradient(
+            135deg,
+            #35152f,
+            #8b315c,
+            #e44d86
+        );
 }
 
 footer h2 {
     font-size: clamp(32px, 8vw, 55px);
+
     font-style: italic;
-    margin-bottom: 15px;
+
+    margin-bottom: 18px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ================= FLOATING HEARTS ================= */
 
-@keyframes boxAppear {
+.floatingHeart {
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    animation:
+        floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: .8;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(40px) scale(.9);
+        transform: scale(.85) translateY(30px);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
     }
 }
 
-@keyframes titleAppear {
+@keyframes titleIn {
     from {
         opacity: 0;
         transform: scale(.7);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -439,6 +563,7 @@ footer h2 {
         opacity: 0;
         transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -449,9 +574,11 @@ footer h2 {
     0%,100% {
         transform: scale(1);
     }
+
     15% {
         transform: scale(1.15);
     }
+
     30% {
         transform: scale(1);
     }
@@ -461,56 +588,42 @@ footer h2 {
     0%,100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(12px);
     }
 }
 
-@keyframes floatHeart {
-    from {
-        transform: translateY(0) rotate(0deg);
-    }
-    to {
-        transform: translateY(-110vh) rotate(360deg);
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px) {
 
     section {
-        padding: 50px 12px;
-    }
-
-    .hero {
-        min-height: 80vh;
+        padding: 55px 10px;
     }
 
     .photoFrame {
-        height: 72vw;
+        height: 75vw;
         min-height: 280px;
     }
 
-    .slideBtn {
-        width: 44px;
-        height: 44px;
-        font-size: 20px;
+    .arrow {
+        width: 43px;
+        height: 43px;
+        font-size: 18px;
     }
 
     .letter {
-        padding: 25px 20px;
+        padding: 27px 21px;
         font-size: 16px;
     }
 
-    .photoCaption {
+    .caption {
         font-size: 17px;
     }
 
     .reasons {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }
 </style>
@@ -518,19 +631,23 @@ footer h2 {
 
 <body>
 
-<!-- =========================
-     PASSWORD SCREEN
-========================= -->
+<!-- ================= PASSWORD ================= -->
 
 <div id="lockScreen">
 
     <div class="lockBox">
 
-        <div class="lockIcon">🔐</div>
+        <div class="lockHeart">
+            💗
+        </div>
 
-        <h1>Our Little Secret 💕</h1>
+        <h1>
+            Our Little Secret
+        </h1>
 
-        <p>Only we know the way in...</p>
+        <p>
+            Only we know the way in... 💕
+        </p>
 
         <input
             type="password"
@@ -543,7 +660,7 @@ footer h2 {
         </button>
 
         <div id="error">
-            Wrong password 💔 Try again.
+            Wrong password 💔
         </div>
 
     </div>
@@ -551,9 +668,7 @@ footer h2 {
 </div>
 
 
-<!-- =========================
-     WEBSITE
-========================= -->
+<!-- ================= WEBSITE ================= -->
 
 <div id="website">
 
@@ -561,9 +676,13 @@ footer h2 {
 
 <header class="hero">
 
-    <small>♡ Welcome to ♡</small>
+    <small>
+        ♡ Welcome to ♡
+    </small>
 
-    <h1>Our Little World</h1>
+    <h1>
+        Our Little World
+    </h1>
 
     <div class="names">
         Rahul ♡ Gloria
@@ -573,201 +692,259 @@ footer h2 {
         Two hearts, one beautiful story.
     </p>
 
-    <div class="scrollDown">⌄</div>
+    <div class="scroll">
+        ↓
+    </div>
 
 </header>
 
 
-<!-- MEMORIES -->
+<!-- ================= MEMORIES ================= -->
 
 <section>
 
-    <h2 class="sectionTitle">
-        Our Memories 📸
+<h2 class="sectionTitle">
+    Our Memories 📸
+</h2>
+
+<div class="slideshow">
+
+    <div class="photoFrame">
+
+        <!-- PHOTO 1 -->
+
+        <div class="slide active">
+
+            <img src="photo1.jpg" alt="Our memory 1">
+
+            <div class="caption">
+                Little moments, big memories. 💕
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="slide">
+
+            <img src="photo2.jpg" alt="Our memory 2">
+
+            <div class="caption">
+                Every moment with you is special. 🌸
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="slide">
+
+            <img src="photo3.jpg" alt="Our memory 3">
+
+            <div class="caption">
+                Just you and me. ❤️
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="slide">
+
+            <img src="photo4.jpg" alt="Our memory 4">
+
+            <div class="caption">
+                A story worth remembering. ✨
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <button
+            class="arrow prev"
+            onclick="changeSlide(-1)"
+        >
+            ❮
+        </button>
+
+        <button
+            class="arrow next"
+            onclick="changeSlide(1)"
+        >
+            ❯
+        </button>
+
+    </div>
+
+
+    <!-- DOTS -->
+
+    <div class="dots">
+
+        <span
+            class="dot active"
+            onclick="showSlide(0)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(1)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(2)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(3)"
+        ></span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section>
+
+<h2 class="sectionTitle">
+    A Little Letter 💌
+</h2>
+
+<div class="letter">
+
+    <h2>
+        Dear Gloria,
     </h2>
 
-    <div class="slideshow">
+    <p>
+        I'm sorry for annoying you sometimes 😭💕
+        I know I can be a little annoying, but I promise
+        I like you way more than I annoy you.
+    </p>
 
-        <div class="photoFrame">
+    <br>
 
-            <!-- PHOTO 1 -->
-            <div class="slide active">
-                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80">
-                <div class="photoCaption">
-                    Little moments, big memories. 💕
-                </div>
-            </div>
+    <p>
+        Ever since I met you, I've found myself falling
+        for you a little more every day.
+    </p>
 
-            <!-- PHOTO 2 -->
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
-                <div class="photoCaption">
-                    Every moment with you is special. 🌸
-                </div>
-            </div>
+    <br>
 
-            <!-- PHOTO 3 -->
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80">
-                <div class="photoCaption">
-                    Just you and me. ❤️
-                </div>
-            </div>
+    <p>
+        Somehow, you became someone really special to me,
+        and I love all the little moments we share.
+    </p>
 
-            <!-- PHOTO 4 -->
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&w=1200&q=80">
-                <div class="photoCaption">
-                    A story worth remembering. ✨
-                </div>
-            </div>
+    <br>
 
-            <button class="slideBtn prev" onclick="changeSlide(-1)">
-                ❮
-            </button>
+    <p>
+        I don't always know how to say it properly,
+        but I'm really glad I met you. ❤️
+    </p>
 
-            <button class="slideBtn next" onclick="changeSlide(1)">
-                ❯
-            </button>
+    <br>
 
-        </div>
+    <p>
+        Here's to all our little moments, our silly
+        conversations, our memories, and all the beautiful
+        moments still waiting for us.
+    </p>
 
-        <div class="dots">
-
-            <span class="dot active" onclick="showSlide(0)"></span>
-            <span class="dot" onclick="showSlide(1)"></span>
-            <span class="dot" onclick="showSlide(2)"></span>
-            <span class="dot" onclick="showSlide(3)"></span>
-
-        </div>
-
+    <div class="signature">
+        ♡ Rahul
     </div>
+
+</div>
 
 </section>
 
 
-<!-- LETTER -->
+<!-- ================= STORY ================= -->
 
 <section>
 
-    <h2 class="sectionTitle">
-        A Little Letter 💌
+<div class="storyCard">
+
+    <div class="storyHeart">
+        💖
+    </div>
+
+    <h2>
+        Our Story
     </h2>
 
-    <div class="letter">
-
-        <h3>Dear Gloria,</h3>
-
-        <p>
-            I'm sorry for annoying you sometimes 😭💕
-            I know I can be a little annoying, but I promise
-            I like you way more than I annoy you.
-        </p>
-
-        <br>
-
-        <p>
-            Ever since I met you, I've found myself falling
-            for you a little more every day.
-        </p>
-
-        <br>
-
-        <p>
-            Somehow, you became someone really special to me,
-            and I love all the little moments we share.
-        </p>
-
-        <br>
-
-        <p>
-            I don't always know how to say it properly,
-            but I'm really glad I met you. ❤️
-        </p>
-
-        <br>
-
-        <p>
-            Here's to all our little moments, our silly
-            conversations, our memories, and all the beautiful
-            moments still waiting for us.
-        </p>
-
-        <div class="signature">
-            ♡ Rahul
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- STORY -->
-
-<section>
-
-    <div class="storyCard">
-
-        <div class="storyHeart">💗</div>
-
-        <h2>Our Story</h2>
-
-        <h2>Since February 2026 ♡</h2>
-
-        <p>
-            And hopefully many more memories to come.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- REASONS -->
-
-<section>
-
-    <h2 class="sectionTitle">
-        Reasons I Love You 💕
+    <h2>
+        Since February 2026 ♡
     </h2>
 
-    <div class="reasons">
+    <p>
+        And hopefully many more memories to come.
+    </p>
 
-        <div class="reason">
-            <span>❤️</span>
-            You make ordinary moments feel special.
-        </div>
-
-        <div class="reason">
-            <span>😊</span>
-            You always manage to make me smile.
-        </div>
-
-        <div class="reason">
-            <span>✨</span>
-            I love the way we can be completely silly together.
-        </div>
-
-        <div class="reason">
-            <span>📸</span>
-            Every memory with you means something to me.
-        </div>
-
-        <div class="reason">
-            <span>💗</span>
-            You're someone who became really special to me.
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= REASONS ================= -->
+
+<section>
+
+<h2 class="sectionTitle">
+    Reasons I Love You 💕
+</h2>
+
+<div class="reasons">
+
+    <div class="reason">
+        <span>❤️</span>
+        You make ordinary moments feel special.
+    </div>
+
+    <div class="reason">
+        <span>😊</span>
+        You always manage to make me smile.
+    </div>
+
+    <div class="reason">
+        <span>✨</span>
+        I love the way we can be completely silly together.
+    </div>
+
+    <div class="reason">
+        <span>📸</span>
+        Every memory with you means something to me.
+    </div>
+
+    <div class="reason">
+        <span>💗</span>
+        You're someone who became really special to me.
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= END ================= -->
 
 <footer>
 
-    <h2>Our Story Isn't Over Yet 💕</h2>
+    <h2>
+        Our Story Isn't Over Yet 💕
+    </h2>
 
     <p>
         This is only the beginning of our little story.
@@ -775,7 +952,9 @@ footer h2 {
 
     <br>
 
-    <h2>Rahul ♡ Gloria</h2>
+    <h2>
+        Rahul ♡ Gloria
+    </h2>
 
     <p>
         Made with lots of love 💗
@@ -788,50 +967,51 @@ footer h2 {
 
 <script>
 
-/* =========================
-   PASSWORD
-========================= */
+/* ================= PASSWORD ================= */
 
 function unlock() {
 
-    const password =
+    const entered =
         document.getElementById("passwordInput").value;
 
-    const correctPassword = "GloriaRahul";
+    if (entered === "GloriaRahul") {
 
-    if (password === correctPassword) {
+        document
+            .getElementById("lockScreen")
+            .style.display = "none";
 
-        document.getElementById("lockScreen").style.display = "none";
-
-        document.getElementById("website").style.display = "block";
+        document
+            .getElementById("website")
+            .style.display = "block";
 
     } else {
 
-        document.getElementById("error").style.display = "block";
-
-        document.getElementById("passwordInput").value = "";
+        document
+            .getElementById("error")
+            .style.display = "block";
 
     }
+
 }
 
 
 /* ENTER KEY */
 
-document.getElementById("passwordInput").addEventListener(
-    "keydown",
-    function(event) {
+document
+    .getElementById("passwordInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Enter") {
-            unlock();
+            if (event.key === "Enter") {
+                unlock();
+            }
+
         }
-
-    }
-);
+    );
 
 
-/* =========================
-   SLIDESHOW
-========================= */
+/* ================= SLIDESHOW ================= */
 
 let currentSlide = 0;
 
@@ -852,19 +1032,28 @@ function showSlide(index) {
         index = slides.length - 1;
     }
 
-    slides.forEach(slide => {
+    slides.forEach(function(slide) {
+
         slide.classList.remove("active");
+
     });
 
-    dots.forEach(dot => {
+    dots.forEach(function(dot) {
+
         dot.classList.remove("active");
+
     });
 
-    slides[index].classList.add("active");
+    slides[index]
+        .classList
+        .add("active");
 
-    dots[index].classList.add("active");
+    dots[index]
+        .classList
+        .add("active");
 
     currentSlide = index;
+
 }
 
 
@@ -884,43 +1073,46 @@ setInterval(function() {
 }, 5000);
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* ================= FLOATING HEARTS ================= */
 
 function createHeart() {
 
     const heart =
         document.createElement("div");
 
-    heart.className = "heart";
+    heart.className =
+        "floatingHeart";
 
-    const hearts = ["❤️","💕","💗","💖","💓","🌸"];
+    const hearts =
+        ["❤️","💕","💗","💖","💓","💞"];
 
-    heart.innerHTML =
-        hearts[Math.floor(Math.random() * hearts.length)];
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
 
     heart.style.left =
         Math.random() * 100 + "vw";
 
     heart.style.fontSize =
-        (12 + Math.random() * 20) + "px";
+        (14 + Math.random() * 20) + "px";
 
     heart.style.animationDuration =
         (5 + Math.random() * 6) + "s";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
+    setTimeout(function() {
+
         heart.remove();
+
     }, 12000);
 
 }
 
-
-/* CREATE HEARTS */
-
-setInterval(createHeart, 700);
+setInterval(createHeart, 800);
 
 </script>
 
