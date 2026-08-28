@@ -3,627 +3,506 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Rahul ♡ Gloria</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Georgia, serif;
-    color: #682342;
-    background: linear-gradient(135deg, #ffe5ef, #fff8fb, #f3e3ff);
-    overflow-x: hidden;
+body{
+    font-family:Georgia,serif;
+    color:#682342;
+    background:linear-gradient(135deg,#ffe5ef,#fff8fb,#f3e3ff);
+    overflow-x:hidden;
 }
 
-/* ================= PASSWORD ================= */
+/* PASSWORD */
 
-#lockScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
+#lockScreen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
     background:
-        radial-gradient(circle at 20% 20%, #ff9fc5, transparent 28%),
-        radial-gradient(circle at 80% 80%, #d98cff, transparent 28%),
-        linear-gradient(135deg, #3b1635, #8e315e, #ed78a8);
+        radial-gradient(circle at 20% 20%,#ff9fc5,transparent 28%),
+        radial-gradient(circle at 80% 80%,#d98cff,transparent 28%),
+        linear-gradient(135deg,#3b1635,#8e315e,#ed78a8);
 }
 
-.lockBox {
-    width: 100%;
-    max-width: 390px;
-    padding: 42px 28px;
-    text-align: center;
-
-    background: rgba(255,255,255,.17);
-    backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,.4);
-    border-radius: 30px;
-
-    box-shadow: 0 25px 70px rgba(50,0,35,.4);
-
-    animation: appear 1s ease;
+.lockBox{
+    width:100%;
+    max-width:390px;
+    padding:42px 28px;
+    text-align:center;
+    background:rgba(255,255,255,.17);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:30px;
+    box-shadow:0 25px 70px rgba(50,0,35,.4);
+    animation:appear 1s ease;
 }
 
-.lockHeart {
-    font-size: 65px;
-    animation: heartbeat 1.5s infinite;
+.lockHeart{
+    font-size:65px;
+    animation:heartbeat 1.5s infinite;
 }
 
-.lockBox h1 {
-    color: white;
-    font-size: 32px;
-    margin: 15px 0 8px;
+.lockBox h1{
+    color:white;
+    font-size:32px;
+    margin:15px 0 8px;
 }
 
-.lockBox p {
-    color: #ffe8f2;
-    margin-bottom: 22px;
+.lockBox p{
+    color:#ffe8f2;
+    margin-bottom:22px;
 }
 
-#passwordInput {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border-radius: 18px;
-    text-align: center;
-    font-size: 16px;
+#passwordInput{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    text-align:center;
+    font-size:16px;
 }
 
-#enterBtn {
-    width: 100%;
-    padding: 15px;
-    margin-top: 14px;
-
-    border: none;
-    border-radius: 18px;
-
-    background: #ff4385;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: .3s;
+#enterBtn{
+    width:100%;
+    padding:15px;
+    margin-top:14px;
+    border:none;
+    border-radius:18px;
+    background:#ff4385;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
-#enterBtn:hover {
-    transform: scale(1.04);
+#enterBtn:hover{
+    transform:scale(1.04);
 }
 
-#error {
-    display: none;
-    color: #ffd5e4;
-    margin-top: 14px;
+#error{
+    display:none;
+    color:#ffd5e4;
+    margin-top:14px;
 }
 
-/* ================= WEBSITE ================= */
+/* WEBSITE */
 
-#website {
-    display: none;
+#website{
+    display:none;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 30px;
-
-    position: relative;
-    overflow: hidden;
-
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
     background:
-        radial-gradient(circle at 50% 15%, rgba(255,255,255,.55), transparent 25%),
-        linear-gradient(135deg, #ffb3d0, #dc78a6, #73305a);
+        radial-gradient(circle at 50% 15%,rgba(255,255,255,.55),transparent 25%),
+        linear-gradient(135deg,#ffb3d0,#dc78a6,#73305a);
 }
 
-.hero small {
-    color: white;
-    font-size: 19px;
-    animation: fadeUp 1s ease;
+.hero small{
+    color:white;
+    font-size:19px;
+    animation:fadeUp 1s ease;
 }
 
-.hero h1 {
-    color: white;
-
-    font-size: clamp(48px, 11vw, 90px);
-
-    font-style: italic;
-
-    margin: 15px 0;
-
-    text-shadow: 0 5px 25px rgba(70,0,40,.4);
-
-    animation: titleIn 1.4s ease;
+.hero h1{
+    color:white;
+    font-size:clamp(48px,11vw,90px);
+    font-style:italic;
+    margin:15px 0;
+    text-shadow:0 5px 25px rgba(70,0,40,.4);
+    animation:titleIn 1.4s ease;
 }
 
-.names {
-    color: white;
-    font-size: clamp(28px, 7vw, 48px);
-
-    animation: fadeUp 1.7s ease;
+.names{
+    color:white;
+    font-size:clamp(28px,7vw,48px);
+    animation:fadeUp 1.7s ease;
 }
 
-.subtitle {
-    color: #fff4f9;
-    font-size: 19px;
-    margin-top: 15px;
-
-    animation: fadeUp 2s ease;
+.subtitle{
+    color:#fff4f9;
+    font-size:19px;
+    margin-top:15px;
+    animation:fadeUp 2s ease;
 }
 
-.scroll {
-    color: white;
-    font-size: 35px;
-    margin-top: 45px;
-
-    animation: bounce 1.6s infinite;
+.scroll{
+    color:white;
+    font-size:35px;
+    margin-top:45px;
+    animation:bounce 1.6s infinite;
 }
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
-section {
-    padding: 75px 15px;
+section{
+    padding:75px 15px;
 }
 
-.sectionTitle {
-    text-align: center;
-
-    font-size: clamp(32px, 8vw, 46px);
-
-    font-style: italic;
-
-    color: #852750;
-
-    margin-bottom: 38px;
+.sectionTitle{
+    text-align:center;
+    font-size:clamp(32px,8vw,46px);
+    font-style:italic;
+    color:#852750;
+    margin-bottom:38px;
 }
 
-/* ================= SLIDESHOW ================= */
+/* SLIDESHOW */
 
-.slideshow {
-    width: min(94%, 850px);
-    margin: auto;
+.slideshow{
+    width:min(94%,850px);
+    margin:auto;
 }
 
-.photoFrame {
-    position: relative;
-
-    height: min(72vw, 550px);
-    min-height: 300px;
-
-    overflow: hidden;
-
-    border-radius: 30px;
-
-    border: 5px solid rgba(255,255,255,.9);
-
-    background: #f5bfd5;
-
+.photoFrame{
+    position:relative;
+    height:min(72vw,550px);
+    min-height:300px;
+    overflow:hidden;
+    border-radius:30px;
+    border:5px solid rgba(255,255,255,.9);
+    background:#f5bfd5;
     box-shadow:
         0 20px 55px rgba(100,20,65,.25),
         0 0 35px rgba(255,100,170,.25);
 }
 
-/* PHOTO */
-
-.slide {
-    position: absolute;
-    inset: 0;
-
-    opacity: 0;
-
-    transform: scale(1.12);
-
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transform:scale(1.12);
     transition:
         opacity 1s ease,
         transform 5s ease;
 }
 
-.slide.active {
-    opacity: 1;
-    transform: scale(1);
+.slide.active{
+    opacity:1;
+    transform:scale(1);
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 /* CAPTION */
 
-.caption {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 50px 20px 23px;
-
-    text-align: center;
-
-    color: white;
-
-    font-size: 21px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(45,0,25,.75)
-        );
-
-    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+.caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:50px 20px 23px;
+    text-align:center;
+    color:white;
+    font-size:21px;
+    background:linear-gradient(
+        transparent,
+        rgba(45,0,25,.75)
+    );
+    text-shadow:0 2px 5px rgba(0,0,0,.5);
 }
 
 /* ARROWS */
 
-.arrow {
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    z-index: 5;
-
-    width: 52px;
-    height: 52px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.92);
-
-    color: #c72c68;
-
-    font-size: 23px;
-
-    cursor: pointer;
-
-    box-shadow: 0 6px 20px rgba(60,0,30,.2);
-
-    transition: .3s;
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.92);
+    color:#c72c68;
+    font-size:23px;
+    cursor:pointer;
+    box-shadow:0 6px 20px rgba(60,0,30,.2);
+    transition:.3s;
 }
 
-.arrow:hover {
-    transform: translateY(-50%) scale(1.12);
+.arrow:hover{
+    transform:translateY(-50%) scale(1.12);
 }
 
-.prev {
-    left: 14px;
+.prev{
+    left:14px;
 }
 
-.next {
-    right: 14px;
+.next{
+    right:14px;
 }
 
 /* DOTS */
 
-.dots {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    margin-top: 20px;
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    margin-top:20px;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-
-    border-radius: 20px;
-
-    background: #dfa2bc;
-
-    cursor: pointer;
-
-    transition: .4s;
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:20px;
+    background:#dfa2bc;
+    cursor:pointer;
+    transition:.4s;
 }
 
-.dot.active {
-    width: 28px;
-    background: #e94882;
+.dot.active{
+    width:28px;
+    background:#e94882;
 }
 
-/* ================= LETTER ================= */
+/* LETTER */
 
-.letter {
-    max-width: 850px;
-
-    margin: auto;
-
-    padding: 40px;
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,.65);
-
-    backdrop-filter: blur(10px);
-
-    box-shadow:
-        0 15px 45px rgba(100,20,65,.12);
-
-    line-height: 1.9;
-
-    font-size: 18px;
+.letter{
+    max-width:850px;
+    margin:auto;
+    padding:40px;
+    border-radius:28px;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(10px);
+    box-shadow:0 15px 45px rgba(100,20,65,.12);
+    line-height:1.9;
+    font-size:18px;
 }
 
-.letter h2 {
-    text-align: center;
-
-    margin-bottom: 25px;
-
-    font-size: 30px;
+.letter h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:30px;
 }
 
-.signature {
-    text-align: right;
-
-    margin-top: 25px;
-
-    font-size: 23px;
-
-    font-style: italic;
+.signature{
+    text-align:right;
+    margin-top:25px;
+    font-size:23px;
+    font-style:italic;
 }
 
-/* ================= STORY ================= */
+/* STORY */
 
-.storyCard {
-    max-width: 700px;
-
-    margin: auto;
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,.65);
-
-    box-shadow:
-        0 15px 45px rgba(100,20,65,.12);
+.storyCard{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:40px 20px;
+    border-radius:28px;
+    background:rgba(255,255,255,.65);
+    box-shadow:0 15px 45px rgba(100,20,65,.12);
 }
 
-.storyHeart {
-    font-size: 60px;
-
-    animation: heartbeat 1.5s infinite;
+.storyHeart{
+    font-size:60px;
+    animation:heartbeat 1.5s infinite;
 }
 
-.storyCard h2 {
-    margin: 15px 0;
-
-    font-size: 32px;
+.storyCard h2{
+    margin:15px 0;
+    font-size:32px;
 }
 
-.storyCard p {
-    opacity: .7;
+.storyCard p{
+    opacity:.7;
 }
 
-/* ================= REASONS ================= */
+/* REASONS */
 
-.reasons {
-    width: min(95%, 1000px);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(170px, 1fr));
-
-    gap: 18px;
+.reasons{
+    width:min(95%,1000px);
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:18px;
 }
 
-.reason {
-    padding: 25px 15px;
-
-    text-align: center;
-
-    border-radius: 22px;
-
-    background: rgba(255,255,255,.65);
-
-    box-shadow:
-        0 10px 30px rgba(100,20,65,.09);
-
-    transition: .4s;
+.reason{
+    padding:25px 15px;
+    text-align:center;
+    border-radius:22px;
+    background:rgba(255,255,255,.65);
+    box-shadow:0 10px 30px rgba(100,20,65,.09);
+    transition:.4s;
 }
 
-.reason:hover {
-    transform:
-        translateY(-8px)
-        rotate(1deg);
+.reason:hover{
+    transform:translateY(-8px) rotate(1deg);
 }
 
-.reason span {
-    display: block;
-
-    font-size: 35px;
-
-    margin-bottom: 12px;
+.reason span{
+    display:block;
+    font-size:35px;
+    margin-bottom:12px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
-footer {
-    text-align: center;
-
-    padding: 90px 20px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #35152f,
-            #8b315c,
-            #e44d86
-        );
+footer{
+    text-align:center;
+    padding:90px 20px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        #35152f,
+        #8b315c,
+        #e44d86
+    );
 }
 
-footer h2 {
-    font-size: clamp(32px, 8vw, 55px);
-
-    font-style: italic;
-
-    margin-bottom: 18px;
+footer h2{
+    font-size:clamp(32px,8vw,55px);
+    font-style:italic;
+    margin-bottom:18px;
 }
 
-/* ================= FLOATING HEARTS ================= */
+/* FLOATING HEARTS */
 
-.floatingHeart {
-    position: fixed;
-
-    bottom: -40px;
-
-    pointer-events: none;
-
-    z-index: 100;
-
-    animation:
-        floatUp linear forwards;
+.floatingHeart{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    z-index:100;
+    animation:floatUp linear forwards;
 }
 
-@keyframes floatUp {
-    from {
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: .8;
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:.8;
     }
 
-    to {
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
     }
 }
 
-/* ================= ANIMATIONS ================= */
+/* ANIMATIONS */
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scale(.85) translateY(30px);
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:scale(.85) translateY(30px);
     }
 
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-@keyframes titleIn {
-    from {
-        opacity: 0;
-        transform: scale(.7);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
     }
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
+@keyframes titleIn{
+    from{
+        opacity:0;
+        transform:scale(.7);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes heartbeat {
-    0%,100% {
-        transform: scale(1);
-    }
-
-    15% {
-        transform: scale(1.15);
-    }
-
-    30% {
-        transform: scale(1);
+    to{
+        opacity:1;
+        transform:scale(1);
     }
 }
 
-@keyframes bounce {
-    0%,100% {
-        transform: translateY(0);
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
     }
 
-    50% {
-        transform: translateY(12px);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:600px) {
-
-    section {
-        padding: 55px 10px;
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
     }
 
-    .photoFrame {
-        height: 75vw;
-        min-height: 280px;
+    15%{
+        transform:scale(1.15);
     }
 
-    .arrow {
-        width: 43px;
-        height: 43px;
-        font-size: 18px;
+    30%{
+        transform:scale(1);
+    }
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
     }
 
-    .letter {
-        padding: 27px 21px;
-        font-size: 16px;
+    50%{
+        transform:translateY(12px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    section{
+        padding:55px 10px;
     }
 
-    .caption {
-        font-size: 17px;
+    .photoFrame{
+        height:75vw;
+        min-height:280px;
     }
 
-    .reasons {
-        grid-template-columns: repeat(2,1fr);
+    .arrow{
+        width:43px;
+        height:43px;
+        font-size:18px;
+    }
+
+    .letter{
+        padding:27px 21px;
+        font-size:16px;
+    }
+
+    .caption{
+        font-size:17px;
+    }
+
+    .reasons{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 </style>
@@ -631,7 +510,7 @@ footer h2 {
 
 <body>
 
-<!-- ================= PASSWORD ================= -->
+<!-- PASSWORD SCREEN -->
 
 <div id="lockScreen">
 
@@ -668,7 +547,7 @@ footer h2 {
 </div>
 
 
-<!-- ================= WEBSITE ================= -->
+<!-- WEBSITE -->
 
 <div id="website">
 
@@ -676,9 +555,7 @@ footer h2 {
 
 <header class="hero">
 
-    <small>
-        ♡ Welcome to ♡
-    </small>
+    <small>♡ Welcome to ♡</small>
 
     <h1>
         Our Little World
@@ -699,7 +576,7 @@ footer h2 {
 </header>
 
 
-<!-- ================= MEMORIES ================= -->
+<!-- MEMORIES -->
 
 <section>
 
@@ -709,111 +586,124 @@ footer h2 {
 
 <div class="slideshow">
 
-    <div class="photoFrame">
-
-        <!-- PHOTO 1 -->
-
-        <div class="slide active">
-
-            <img src="photo1.jpg" alt="Our memory 1">
-
-            <div class="caption">
-                Little moments, big memories. 💕
-            </div>
-
-        </div>
+<div class="photoFrame">
 
 
-        <!-- PHOTO 2 -->
+    <!-- PHOTO 1 -->
 
-        <div class="slide">
+    <div class="slide active">
 
-            <img src="photo2.jpg" alt="Our memory 2">
-
-            <div class="caption">
-                Every moment with you is special. 🌸
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO 3 -->
-
-        <div class="slide">
-
-            <img src="photo3.jpg" alt="Our memory 3">
-
-            <div class="caption">
-                Just you and me. ❤️
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO 4 -->
-
-        <div class="slide">
-
-            <img src="photo4.jpg" alt="Our memory 4">
-
-            <div class="caption">
-                A story worth remembering. ✨
-            </div>
-
-        </div>
-
-
-        <!-- BUTTONS -->
-
-        <button
-            class="arrow prev"
-            onclick="changeSlide(-1)"
+        <img
+            src="photo1.jpg.png"
+            alt="Rahul and Gloria memory 1"
         >
-            ❮
-        </button>
 
-        <button
-            class="arrow next"
-            onclick="changeSlide(1)"
-        >
-            ❯
-        </button>
+        <div class="caption">
+            Little moments, big memories. 💕
+        </div>
 
     </div>
 
 
-    <!-- DOTS -->
+    <!-- PHOTO 2 -->
 
-    <div class="dots">
+    <div class="slide">
 
-        <span
-            class="dot active"
-            onclick="showSlide(0)"
-        ></span>
+        <img
+            src="photo2.jpg.png"
+            alt="Rahul and Gloria memory 2"
+        >
 
-        <span
-            class="dot"
-            onclick="showSlide(1)"
-        ></span>
-
-        <span
-            class="dot"
-            onclick="showSlide(2)"
-        ></span>
-
-        <span
-            class="dot"
-            onclick="showSlide(3)"
-        ></span>
+        <div class="caption">
+            Every moment with you is special. 🌸
+        </div>
 
     </div>
+
+
+    <!-- PHOTO 3 -->
+
+    <div class="slide">
+
+        <img
+            src="photo3.jpg.png"
+            alt="Rahul and Gloria memory 3"
+        >
+
+        <div class="caption">
+            Just you and me. ❤️
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO 4 -->
+
+    <div class="slide">
+
+        <img
+            src="photo4.jpg.png"
+            alt="Rahul and Gloria memory 4"
+        >
+
+        <div class="caption">
+            A story worth remembering. ✨
+        </div>
+
+    </div>
+
+
+    <!-- ARROWS -->
+
+    <button
+        class="arrow prev"
+        onclick="changeSlide(-1)"
+    >
+        ❮
+    </button>
+
+    <button
+        class="arrow next"
+        onclick="changeSlide(1)"
+    >
+        ❯
+    </button>
+
+</div>
+
+
+<!-- DOTS -->
+
+<div class="dots">
+
+    <span
+        class="dot active"
+        onclick="showSlide(0)"
+    ></span>
+
+    <span
+        class="dot"
+        onclick="showSlide(1)"
+    ></span>
+
+    <span
+        class="dot"
+        onclick="showSlide(2)"
+    ></span>
+
+    <span
+        class="dot"
+        onclick="showSlide(3)"
+    ></span>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= LETTER ================= -->
+<!-- LOVE LETTER -->
 
 <section>
 
@@ -871,7 +761,7 @@ footer h2 {
 </section>
 
 
-<!-- ================= STORY ================= -->
+<!-- STORY -->
 
 <section>
 
@@ -898,7 +788,7 @@ footer h2 {
 </section>
 
 
-<!-- ================= REASONS ================= -->
+<!-- REASONS -->
 
 <section>
 
@@ -938,7 +828,7 @@ footer h2 {
 </section>
 
 
-<!-- ================= END ================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -967,28 +857,25 @@ footer h2 {
 
 <script>
 
-/* ================= PASSWORD ================= */
+/* PASSWORD */
 
-function unlock() {
+function unlock(){
 
     const entered =
         document.getElementById("passwordInput").value;
 
-    if (entered === "GloriaRahul") {
+    if(entered === "GloriaRahul"){
 
-        document
-            .getElementById("lockScreen")
-            .style.display = "none";
+        document.getElementById("lockScreen").style.display =
+            "none";
 
-        document
-            .getElementById("website")
-            .style.display = "block";
+        document.getElementById("website").style.display =
+            "block";
 
-    } else {
+    }else{
 
-        document
-            .getElementById("error")
-            .style.display = "block";
+        document.getElementById("error").style.display =
+            "block";
 
     }
 
@@ -999,19 +886,16 @@ function unlock() {
 
 document
     .getElementById("passwordInput")
-    .addEventListener(
-        "keydown",
-        function(event) {
+    .addEventListener("keydown",function(event){
 
-            if (event.key === "Enter") {
-                unlock();
-            }
-
+        if(event.key === "Enter"){
+            unlock();
         }
-    );
+
+    });
 
 
-/* ================= SLIDESHOW ================= */
+/* SLIDESHOW */
 
 let currentSlide = 0;
 
@@ -1022,23 +906,23 @@ const dots =
     document.querySelectorAll(".dot");
 
 
-function showSlide(index) {
+function showSlide(index){
 
-    if (index >= slides.length) {
+    if(index >= slides.length){
         index = 0;
     }
 
-    if (index < 0) {
+    if(index < 0){
         index = slides.length - 1;
     }
 
-    slides.forEach(function(slide) {
+    slides.forEach(function(slide){
 
         slide.classList.remove("active");
 
     });
 
-    dots.forEach(function(dot) {
+    dots.forEach(function(dot){
 
         dot.classList.remove("active");
 
@@ -1057,7 +941,7 @@ function showSlide(index) {
 }
 
 
-function changeSlide(direction) {
+function changeSlide(direction){
 
     showSlide(currentSlide + direction);
 
@@ -1066,16 +950,16 @@ function changeSlide(direction) {
 
 /* AUTO SLIDESHOW */
 
-setInterval(function() {
+setInterval(function(){
 
     showSlide(currentSlide + 1);
 
-}, 5000);
+},5000);
 
 
-/* ================= FLOATING HEARTS ================= */
+/* FLOATING HEARTS */
 
-function createHeart() {
+function createHeart(){
 
     const heart =
         document.createElement("div");
@@ -1104,15 +988,15 @@ function createHeart() {
 
     document.body.appendChild(heart);
 
-    setTimeout(function() {
+    setTimeout(function(){
 
         heart.remove();
 
-    }, 12000);
+    },12000);
 
 }
 
-setInterval(createHeart, 800);
+setInterval(createHeart,800);
 
 </script>
 
